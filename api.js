@@ -82,7 +82,7 @@ app.post('/analyze', async (req, res) => {
     }
 
     // Enviar o código como prompt para o GPT-4.1
-    const llmResponse = await queryLLM(preprompt + code, 'gpt-4.1-turbo');
+    const llmResponse = await queryLLM(preprompt + code, 'openai/gpt-4-turbo');
     
     // Extrair JSON da resposta (ou retornar objeto vazio se não encontrar)
     const extractedJson = extractJsonFromText(llmResponse);
